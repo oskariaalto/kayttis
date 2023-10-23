@@ -10,8 +10,8 @@ const textAreaStyles ={
 
 const buttonWrapper = "flex items-end bg-gray-100 rounded-lg border-0 px-1 font-bold text-grey-100 absolute bottom-3 hover:text-black"
 
-
-export const TextInput = ({placeholder,textstyle}) => {
+export const TextInput = ({ placeholder, textstyle }) => {
+  
     const resizeTextarea = () => {
       const textarea = document.getElementById('resizeTextarea');
       textarea.style.height = '0px';
@@ -25,6 +25,13 @@ export const TextInput = ({placeholder,textstyle}) => {
     const handleChange = (e) => {
       resizeTextarea();
     };
+  
+    const clearTextArea = () => {
+      const textarea = document.getElementById('resizeTextarea');
+      textarea.value = ''; 
+      resizeTextarea()
+    };
+  
   return(
     <div className="hero bg-gradient-dark h-auto flex flex-col px-2">
       <div className="search-box mx-auto my-auto w-full">
@@ -42,7 +49,7 @@ export const TextInput = ({placeholder,textstyle}) => {
             onChange={handleChange}
           ></textarea>
           <span className={`${buttonWrapper} right-2`}>
-            <IconButton>
+            <IconButton onClick={() => clearTextArea()}>
               <AiOutlineSend size={28}/>
             </IconButton>
           </span>

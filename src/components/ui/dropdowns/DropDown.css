@@ -1,0 +1,25 @@
+/* Styling the scrollbar for Webkit-based browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 8px; /* Rounded edges */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(207, 207, 207); /* Color of the thumb (the part you drag) */
+    border-radius: 8px; /* Rounded edges */
+    border: 1px solid rgb(61, 61, 61);
+  }
+  
+  /* Styling the scrollbar for Firefox */
+  .scrollbar {
+    width: 12px;
+    border-radius: 8px; /* Rounded edges */
+    background-color: #ffffff;
+  }
+  
+  .scrollbar-thumb {
+    background-color: rgb(207, 207, 207); /* Color of the thumb */
+    border-radius: 8px; /* Rounded edges */
+    border: 1px solid rgb(61, 61, 61);
+  }
+  
