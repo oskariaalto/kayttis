@@ -10,8 +10,8 @@ const textAreaStyles ={
 
 const buttonWrapper = "flex items-end bg-gray-100 rounded-lg border-0 px-1 font-bold text-grey-100 absolute bottom-3 hover:text-black"
 
-export const TextInput = ({ placeholder, textstyle, setMessages, messages }) => {
-  
+export const TextInput = ({ placeholder, textstyle, setMessages, messages, onClick, loading }) => {
+    const [prevKeypress, setPrevKeypress] = useState(0)
     const resizeTextarea = () => {
       const textarea = document.getElementById('resizeTextarea');
       textarea.style.height = '0px';
@@ -24,6 +24,7 @@ export const TextInput = ({ placeholder, textstyle, setMessages, messages }) => 
    
 
     const handleChange = (e) => {
+      e.preventDefault();
       resizeTextarea();
     };
   
@@ -33,7 +34,7 @@ export const TextInput = ({ placeholder, textstyle, setMessages, messages }) => 
       resizeTextarea()
     };
   
-    const sendChat = (text) => {
+    const sendChat = async (text) => {
       if (text === "")
         return
       const element = {
@@ -41,9 +42,20 @@ export const TextInput = ({ placeholder, textstyle, setMessages, messages }) => 
         isAnswer: false,
         id: messages.length + 1
       }
-      setMessages(messages.concat(element))
       clearTextArea()
+      const element1 = await onClick(text)
+      setMessages(messages.concat([element,element1]))
     }
+    const handleKeypress = e => {
+      console.log(e.keyCode)
+      console.log(prevKeypress)
+    if (e.keyCode === 13 && prevKeypress!==16) {
+      sendChat(document.getElementById('resizeTextarea').value);
+      clearTextArea()
+    } else if(e.keyCode !== 13){
+      setPrevKeypress(e.keyCode)
+    }
+  };
   
   return(
     <div className="hero bg-gradient-dark h-auto flex flex-col px-2">
@@ -60,10 +72,13 @@ export const TextInput = ({ placeholder, textstyle, setMessages, messages }) => 
             type="text"
             id="resizeTextarea"
             onChange={handleChange}
+            onKeyDown={handleKeypress}
           ></textarea>
           <span className={`${buttonWrapper} right-2`}>
-            <IconButton onClick={() => sendChat(document.getElementById('resizeTextarea').value)}>
-              <AiOutlineSend size={28}/>
+            <IconButton onClick={async () => {
+              sendChat(document.getElementById('resizeTextarea').value)
+              }}>
+              {loading ?<span className="loading loading-spinner"></span> :<AiOutlineSend size={28}/>} 
             </IconButton>
           </span>
         </form>

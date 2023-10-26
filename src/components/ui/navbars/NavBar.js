@@ -1,14 +1,22 @@
 
 const NavBar = ({setChatView, setHistoryView, setProfileView}) => {
   return (
-    <div className='w-full'>
-      <nav className="bg-neutral-500 p-4 shadow-xl rounded-xl rounded-tr-none w-4/10">
-        <ul className="space-y-4">
-          <li><a href="#" className="text-white" onClick={setChatView}>Chat</a></li>
-          <li><a href="#" className="text-white" onClick={setHistoryView}>Chat history</a></li>
-          <li><a href="#" className="text-white" onClick={setProfileView}>Profile settings</a></li>
-        </ul>
-      </nav>
+    <div className='navbar bg-base-100'>
+      <div className="navbar-start">
+        <div className="dropdown">
+          <label tabIndex={0} className="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+          </label>
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <li><span onClick={setChatView}>Homepage</span></li>
+            <li><span onClick={setHistoryView}>History</span></li>
+            <li><span>About</span></li>
+          </ul>
+        </div>
+      </div>
+      <div className="navbar-center">
+        <span className="btn btn-ghost normal-case text-2xl" onClick={setChatView}>AIBert</span>
+      </div>
     </div>
   )
 }
