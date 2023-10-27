@@ -80,8 +80,15 @@ export const TextInput = ({ placeholder, textstyle, setMessages, messages, onCli
             onKeyDown={handleKeypress}
           ></textarea>
           <span className={`${buttonWrapper} right-2`}>
+<<<<<<< HEAD
             <IconButton onClick={async () => {
               sendChat(document.getElementById('resizeTextarea').value)
+=======
+            <IconButton onClick={(event) => {
+              event.preventDefault()
+              onClick()
+              clearTextArea()
+>>>>>>> 10a84da (added prevent default)
               }}>
               {loading ?<span className="loading loading-spinner"></span> :<AiOutlineSend size={28}/>} 
             </IconButton>
