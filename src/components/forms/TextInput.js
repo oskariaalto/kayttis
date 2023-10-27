@@ -23,8 +23,13 @@ export const TextInput = ({ placeholder, textstyle, setMessages, messages, onCli
     }, []);
    
 
+<<<<<<< HEAD
     const handleChange = (e) => {
       e.preventDefault();
+=======
+    const handleChange = (event) => {
+       event.preventDefault();
+>>>>>>> c8cef4f (Changed the course elements to span)
       resizeTextarea();
     };
   
