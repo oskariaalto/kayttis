@@ -63,7 +63,7 @@ export const NewQuestion = () => {
   }
 
   const newHint = () => {
-    setHintCount(1)
+    setHintCount(hintCount+1)
   }
 
   return(
