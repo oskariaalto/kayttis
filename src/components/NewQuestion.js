@@ -38,6 +38,7 @@ export const NewQuestion = () => {
     try{
       setQuestionState(3)
       setTitle(course)
+      console.log(exercise)
       if(pathname === '/test'){
         const dat = await readFile(course === "Data Structures and Algorithms" ? "data/code.txt" : "data/math.txt")
         setFileContent(dat.split("\n"))
