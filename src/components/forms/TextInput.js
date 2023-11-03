@@ -1,16 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FileInput } from "./FileInput";
 import { IconButton } from "../ui/buttons/IconButton";
 import { AiOutlineFileAdd, AiOutlineSend } from "react-icons/ai";
 
 
 const textAreaStyles ={
-  primary: 'h-auto bg-gray-100 flex text-grey-darker py-2 px-3 pl-12 font-normal text-grey-darkest border border-gray-100 w-full outline-none text-lg text-black resize-y min-h-12 rounded-lg',
+  primary: 'h-auto bg-gray-100 flex text-grey-darker py-2 px-3 pl-12 pr-12 font-normal text-grey-darkest border border-gray-100 w-full outline-none text-lg text-black resize-y min-h-12 rounded-lg',
 }
 
 const buttonWrapper = "flex items-end bg-gray-100 rounded-lg border-0 px-1 font-bold text-grey-100 absolute bottom-3 hover:text-black"
 
-export const TextInput = ({ placeholder, textstyle }) => {
+export const TextInput = ({ placeholder, textstyle, setMessages, messages }) => {
   
     const resizeTextarea = () => {
       const textarea = document.getElementById('resizeTextarea');
@@ -21,6 +21,7 @@ export const TextInput = ({ placeholder, textstyle }) => {
     useEffect(() => {
       resizeTextarea();
     }, []);
+   
 
     const handleChange = (e) => {
       resizeTextarea();
@@ -31,6 +32,18 @@ export const TextInput = ({ placeholder, textstyle }) => {
       textarea.value = ''; 
       resizeTextarea()
     };
+  
+    const sendChat = (text) => {
+      if (text === "")
+        return
+      const element = {
+        text: text,
+        isAnswer: false,
+        id: messages.length + 1
+      }
+      setMessages(messages.concat(element))
+      clearTextArea()
+    }
   
   return(
     <div className="hero bg-gradient-dark h-auto flex flex-col px-2">
@@ -49,7 +62,7 @@ export const TextInput = ({ placeholder, textstyle }) => {
             onChange={handleChange}
           ></textarea>
           <span className={`${buttonWrapper} right-2`}>
-            <IconButton onClick={() => clearTextArea()}>
+            <IconButton onClick={() => sendChat(document.getElementById('resizeTextarea').value)}>
               <AiOutlineSend size={28}/>
             </IconButton>
           </span>

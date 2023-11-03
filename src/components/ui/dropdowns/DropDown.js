@@ -11,8 +11,9 @@ import './DropDown.css'
 
 export const DropDown = ({ onChange, courses, data, label, handleClick, ...props }) => {
   return (
-    <div className="dropdown dropdown-hover" >
-      <label tabIndex={0} className="cursor-pointer text-gray-500 hover:text-black text-lg">
+    <div className="dropdown dropdown-hover w-10/10" >
+      <label tabIndex={0}
+        className="cursor-pointer text-black-500 hover:text-black text-lg">
         {label}
       </label>
       <div

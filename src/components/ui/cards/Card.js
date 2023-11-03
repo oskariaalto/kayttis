@@ -1,7 +1,6 @@
 const cardStyles ={
-  primary: 'card w-2/3 bg-white shadow-xl rounded-xl p-3',
+  primary: 'card w-full h-full bg-neutral-400 shadow-xl rounded-xl rounded-tl-none p-3',
 }
-
 
 const Card = ({style, ...props}) => {
   return(
