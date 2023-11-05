@@ -13,14 +13,13 @@ const divStyles = {
 const ChatBubble = ({ text, id, isAnswer }) => {
     const style = isAnswer ? 'answerBubble' : 'questionBubble'
 
-    const resizeChatBubble = () => {
-        const textarea = document.getElementById(`chatBubble-${id}`);
-        textarea.style.height = textarea.scrollHeight + 'px';
-    };
-
     useEffect(() => {
+        const resizeChatBubble = () => {
+            const textarea = document.getElementById(`chatBubble-${id}`);
+            textarea.style.height = textarea.scrollHeight + 'px';
+        };
         resizeChatBubble();
-    }, []);
+    }, [id]);
     
     console.log(style)
     return (

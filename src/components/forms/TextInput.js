@@ -22,7 +22,6 @@ export const TextInput = ({ placeholder, textstyle, setMessages, messages, onCli
       resizeTextarea();
     }, []);
    
-
     const handleChange = (e) => {
       e.preventDefault();
       resizeTextarea();
