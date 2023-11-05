@@ -18,7 +18,7 @@ export const DropDown = ({ onChange, courses, data, label, handleClick, ...props
       </label>
       <div
         tabIndex={0}
-        className="shadow z-[100] menu dropdown-content bg-gray-200 border border-black rounded-box w-52 text-black rounded"
+        className="shadow z-[100] menu dropdown-content bg-gray-200 border border-black rounded-box w-52 text-black"
         style={{
           maxHeight: '200px',
           overflowY: 'auto',   
