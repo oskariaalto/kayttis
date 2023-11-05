@@ -3,12 +3,15 @@ import { FileInput } from "./FileInput";
 import { IconButton } from "../ui/buttons/IconButton";
 import { AiOutlineFileAdd, AiOutlineSend } from "react-icons/ai";
 
+// vanilla [#E7D79F]
+// light brown [#D05A05] 
+// bg brown [#2E1004]
 
 const textAreaStyles ={
-  primary: 'h-auto bg-gray-100 flex text-grey-darker py-2 px-3 pl-12 pr-12 font-normal text-grey-darkest border border-gray-100 w-full outline-none text-lg text-black resize-y min-h-12 rounded-lg',
+  primary: 'h-auto bg-[#2E1004] flex text-grey-darker py-2 px-3 pl-12 pr-12 font-normal text-[#D05A05] border border-[#E7D79F] w-full outline-none text-lg text-black resize-y min-h-12 rounded-lg',
 }
 
-const buttonWrapper = "flex items-end bg-gray-100 rounded-lg border-0 px-1 font-bold text-grey-100 absolute bottom-3 hover:text-black"
+const buttonWrapper = "flex items-end bg-[#2E1004] rounded-lg border-0 px-1 font-bold text-[#E7D79F] absolute bottom-3 hover:text-[#D05A05] "
 
 export const TextInput = ({ placeholder, textstyle, setMessages, messages, onClick, loading }) => {
     const [prevKeypress, setPrevKeypress] = useState(0)

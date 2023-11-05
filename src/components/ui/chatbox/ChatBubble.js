@@ -1,8 +1,12 @@
 import { useEffect } from "react"
 
+// vanilla [#E7D79F]
+// light brown [#D05A05]
+// bg brown [#2E1004]
+
 const textAreaStyles ={
-    answerBubble: 'h-auto bg-neutral-500 flex text-grey-darker py-2 px-2 pl-4 font-normal text-grey-darkest border border-gray-100 w-full outline-none text-lg text-black resize-none min-h-12 rounded-lg text-left',
-    questionBubble: 'h-auto bg-neutral-200 flex text-grey-darker py-2 px-2 pl-4 font-normal text-grey-darkest border w-full outline-none text-lg text-black resize-none min-h-12 rounded-lg text-left'
+    answerBubble: 'h-auto bg-[#D05A05] flex text-[#2E1004] py-2 px-2 pl-4 font-normal text-[#2E1004] w-full outline-none text-lg text-[#2E1004] resize-none min-h-12 rounded-lg text-left',
+    questionBubble: 'h-auto bg-[#E7D79F] flex text-[#2E1004] py-2 px-2 pl-4 font-normal text-[#2E1004] w-full outline-none text-lg text-[#2E1004] resize-none min-h-12 rounded-lg text-left'
 }
 
 const divStyles = {
