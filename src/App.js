@@ -18,6 +18,8 @@ const App = () => {
   const [history, setHistory] = useState([])
   const [user, setUser] = useState({})
 
+  console.log(user)
+
   useEffect(()=>{
     getUser().then((newUser)=> {
       setUser(newUser)
