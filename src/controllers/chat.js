@@ -32,6 +32,6 @@ export const getHints = async (assignmentId) => {
     userId: 1,
     assignmentId: assignmentId
   }
-  const res = await axios.post('http://localhost:3000/api/chat/hints', body)
+  const res = await axios.post('https://ai-bert-backend-qrwoug6p3q-lz.a.run.app/api/chat/hints', body)
   return res.data
 }

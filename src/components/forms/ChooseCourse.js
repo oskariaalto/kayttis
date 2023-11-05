@@ -18,7 +18,7 @@ export const ChooseCourse = ({ courses, onChange, handleClick, setCourse, chosen
               }
             } 
           >
-            {course}
+            {course.name}
           </span>
         ))}
       </div> 
@@ -30,9 +30,9 @@ export const ChooseExercise = ({exercises, onChange, handleClick, setExercise}) 
   return(
     <DropDown id = 'exercisePicker' label="Exercise" exercises={exercises} handleClick={handleClick}>
       <div className="space-y-2">
-        {exercises.map((exercise) => (
+        {exercises.map((exercise, index) => (
           <span
-            key={exercise}
+            key={index}
             className="block px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg cursor-pointer"
             onClick={() => {
               setExercise(exercise)
@@ -40,7 +40,7 @@ export const ChooseExercise = ({exercises, onChange, handleClick, setExercise}) 
               }
             }
           >
-            {exercise}
+            {exercise.name}
           </span>
         ))}
       </div> 
