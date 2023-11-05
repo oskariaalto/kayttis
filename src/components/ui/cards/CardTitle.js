@@ -1,7 +1,6 @@
 const cardStyles ={
-  primary: 'font-bold text-black text-xl pl-4',
+  primary: 'font-bold text-black text-lg pl-2',
 }
-
 
 const CardTitle = ({cardstyle, ...props}) => {
   return(

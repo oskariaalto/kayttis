@@ -1,0 +1,8 @@
+Sinulla on käytössäsi R säteinen tukki, josta sinun pitäisi sahata palkki, joka olisi mahdollisimman jäykkä. Jos palkin jäykkyyttä kuvaa funktio: $f(x, y)=x y^{2}$ missä x on palkin leveys ja y sen korkeus, minkä kokoinen palkki sinun kannattaisi tukista sahata?
+1. Piirrä kuva tilanteesta, ja johda siitä yhteys palkin korkeudelle ja leveydelle.
+2. Kuvasta näät suorakulmaisen kolmion, jolle pätee pythagoraan lause: $x^{2}+y^{2}=(2 R)^{2}$, josta voit ratkaista y:n: $y^{2}=4 R^{2}-x^{2}$, jonka voit sitten sijoittaa jäykkyyden lausekkeeseen: $f(x)=x\left(4 R^{2}-x^{2}\right)$.
+3. Funktion maksimi löytyy derivaattafunktion nollakohdasta. Eli derivoi funktiotasi, ja etsi sen nollakohdan.
+4. Kannattaa avata sulut: $f(x)=x\left(4 R^{2}-x^{2}\right)=4 R^{2} x-x^{3}$ derivoinnin helpottamiseksi.
+5. Derivaattafunktio on muotoa: $f^{\prime}(x)=\frac{d}{d x}\left(4 R^{2} x-x^{3}\right)=4 R^{2}-3 x^{2}$. Ja sen nollakohdiksi saadaan: $x= \pm \frac{2 \sqrt{3}}{3} R$, joista voidaan hylätä negatiivinen ratkaisu, sillä leveyden pitää olla jotain epänegatiivista.
+6. Muistathan, mikä oli palkin leveyden ja korkeuden yhteys?
+Lopullinen ratkaisu. Jäykimmän mahdollisimman palkin mitat ovat: $x=\frac{2 \sqrt{3}}{3} R$ ja $y=\frac{\sqrt{3}}{3} R$

@@ -1,0 +1,5 @@
+Kirjoita funktio, joka suorittaa binäärihaun rekursiota hyödyntäen. Funktiolle annetaan parametriksi järjestetty lista, sekä alkio, joka listasta halutaan löytää. Funktion tulee palauttaa vastaus option kääreessä. Jos alkiota ei löydy listasta funktion tulee palauttaa None. Jos alkio löytyy listasta funktion tulee palauttaa alkion indeksi Option kääreessä.
+1. Binäärihakualgoritmissä tavoitteena on löytää halutun alkion indeksi. Algoritmin idea on verrata kokoelman puolivälissä olevaa arvoa etsittyyn arvoon. Jos etsitty arvo pienempi, niin sen on pakko löytyä puolivälin vasemmalta puolelta tai sitä ei ole olemassa. Jos etsitty arvo on puolivälissä olevaa arvoa suurempi, niin se löytyy kokoelman oikealta puoliskolta tai sitä ei ole kokoelmassa.
+2. Vertailtuasi puoliväliä voit unohtaa sen puoliskon, jossa etsitty arvo ei varmasti ole ja iteroida algoritmia jäljelle jääneellä puoliskolla.
+3. Rekursiivisessa ratkaisussa tarvitset sisäfunktion, jonka parametreina on kokoelman ensimmäisen alkion indeksi ja viimeisen alkion indeksi.
+4. function binarySearch(list, target) = function inner(low, high) =
