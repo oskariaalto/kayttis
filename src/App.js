@@ -5,6 +5,9 @@ import History from './components/History';
 import Profile from './components/Profile';
 import { getUser } from './controllers/user.js'
 
+// vanilla [#E7D79F]
+// light brown [#D05A05]
+// bg brown [#2E1004]
 
 const App = () => { 
   const [view, setView] = useState("chat")
@@ -46,9 +49,10 @@ const App = () => {
   const setProfileView = () => {
     setView("profile")
   }
-
+  
+ // previous background [#94a3b8] 
   return(
-    <div className='w-full min-h-screen bg-[#94a3b8]'>
+    <div className='w-full min-h-screen bg-[#E7D79F]'>
         <div className='px-0.5'>
           <NavBar setChatView={setChatView} setHistoryView={setHistoryView} setProfileView={setProfileView}/>
         </div>

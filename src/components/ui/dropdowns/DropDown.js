@@ -9,16 +9,20 @@
 
 //import './DropDown.css'
 
+// vanilla [#E7D79F]
+// light brown [#D05A05]
+// bg brown [#2E1004]
+
 export const DropDown = ({ onChange, courses, data, label, handleClick, ...props }) => {
   return (
     <div className="dropdown dropdown-hover w-10/10 rounded" >
       <label tabIndex={0}
-        className="cursor-pointer text-gray-600 hover:text-black text-md">
+        className="cursor-pointer text-[#E7D79F] hover:text-[#D05A05] text-md">
         {label}
       </label>
       <div
         tabIndex={0}
-        className="shadow z-[100] menu dropdown-content bg-gray-200 border border-black rounded-box w-52 text-black"
+        className="shadow z-[100] menu dropdown-content bg-[#2E1004] border border-[#E7D79F] rounded-box w-52 text-[#E7D79F]"
         style={{
           maxHeight: '200px',
           overflowY: 'auto',   

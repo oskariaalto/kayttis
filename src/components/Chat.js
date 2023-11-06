@@ -10,6 +10,10 @@ import { TextButton } from './ui/buttons/TextButton';
 import { LoadingButton } from './ui/buttons/LoadingButton';
 import { getHints, sendChat } from '../controllers/chat';
 
+// vanilla [#E7D79F]
+// light brown [#D05A05]
+// bg brown [#2E1004]
+
 export const Chat = ({ course, setCourse, exercises, setExercises, exercise, setExercise,
   messages, setMessages, QuestionState, setQuestionState, history, setHistory, title, setTitle, courses }) => {
 
@@ -97,10 +101,12 @@ export const Chat = ({ course, setCourse, exercises, setExercises, exercise, set
     }
     return element
   }  
+
 // items-center  justify-center <div className='flex w-full h-full'>
   return (
+    
     <Card>
-      <div className='flex w-full'>
+      <div className='flex w-full'> 
         <div className='flex justify-start p-1 h-full w-1/5'>
           <button onClick={FormNewQuestionCourse}> <CardTitle cardstyle='primary' >{title}</CardTitle> </button>
         </div>
@@ -112,14 +118,14 @@ export const Chat = ({ course, setCourse, exercises, setExercises, exercise, set
         </div>
       </div>
       {QuestionState ===3 && exercise.name &&
-      <div className='p-2 text-black'>
+      <div className='p-2 text-[#E7D79F]'>
         <CardBody cardstyle="chatbox">
-          <span className='font-bold pb-1'>Assingment:</span>
+          <span className='font-bold pb-1 text-[#D05A05]'>Assingment:</span>
           <LatexRenderer value={exercise.description}/>
           {hints.length === 0 && <div className='flex justify-end'>
             {loading ?<LoadingButton/>
             :
-            <TextButton onClick={handleGetHints}>
+            <TextButton onClick={handleGetHints} className='font-bold bg-[#2E1004] text-[#D05A05]'>
               Get Hints
             </TextButton>
             }
@@ -132,10 +138,11 @@ export const Chat = ({ course, setCourse, exercises, setExercises, exercise, set
           </>}
           { hintCount<hints.length-1 && hintCount!==0 && 
           <TextButton onClick={()=> {
-            setHintCount(hintCount+1)
-            setDisableHintsButton(true)
-            setTimeout(setDisableHintsButton(false),100000)
-          }} buttonstyle={disableHintsButton ? 'disabled': ''}>
+              setHintCount(hintCount+1)
+              setDisableHintsButton(true)
+              setTimeout(setDisableHintsButton(false),100000)
+            }} buttonstyle={disableHintsButton ? 'disabled' : ''}
+            className='font-bold bg-[#2E1004] text-[#D05A05]'>
             Next Hint
           </TextButton>
           }
