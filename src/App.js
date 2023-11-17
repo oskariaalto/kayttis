@@ -3,11 +3,8 @@ import { useState, useEffect } from 'react';
 import NavBar from './components/ui/navbars/NavBar';
 import History from './components/History';
 import Profile from './components/Profile';
-import { getUser } from './controllers/user.js'
+import {getUser} from './controllers/user.js'
 
-// vanilla [#E7D79F]
-// light brown [#D05A05]
-// bg brown [#2E1004]
 
 const App = () => { 
   const [view, setView] = useState("chat")
@@ -52,7 +49,20 @@ const App = () => {
   
  // previous background [#94a3b8] 
   return(
-    <div className='w-full min-h-screen bg-[#E7D79F]'>
+    <div className={'w-full min-h-screen bg-site'} style={{ scrollbarWidth: 'thin' }}>
+      <style>{
+      `
+      ::-webkit-scrollbar {
+        width: 12px;
+        border-radius: 8px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #E7D79F;
+        border-radius: 8px;
+        border: 0px solid #D05A05;
+      }
+      `}</style>
         <div className='px-0.5'>
           <NavBar setChatView={setChatView} setHistoryView={setHistoryView} setProfileView={setProfileView}/>
         </div>

@@ -3,17 +3,14 @@ import { FileInput } from "./FileInput";
 import { IconButton } from "../ui/buttons/IconButton";
 import { AiOutlineFileAdd, AiOutlineSend } from "react-icons/ai";
 
-// vanilla [#E7D79F]
-// light brown [#D05A05] 
-// bg brown [#2E1004]
-
-const textAreaStyles ={
-  primary: 'h-auto bg-[#2E1004] flex text-grey-darker py-2 px-3 pl-12 pr-12 font-normal text-[#D05A05] border border-[#E7D79F] w-full outline-none text-lg text-[#D05A05] resize-y min-h-12 rounded-lg',
+const textAreaStyles = {
+  primary: `h-auto bg-background flex text-grey-darker py-2 px-3 pl-12 pr-12 font-normal text-secondary border border-primary w-full outline-none text-lg resize-y min-h-12 rounded-lg`,
 }
 
-const buttonWrapper = "flex items-end bg-[#2E1004] rounded-lg border-0 px-1 font-bold text-[#E7D79F] absolute bottom-3 hover:text-[#D05A05] "
+const buttonWrapper = `flex items-end bg-background rounded-lg border-0 px-1 font-bold text-primary absolute bottom-3 hover:text-secondary`
 
 export const TextInput = ({ placeholder, textstyle, setMessages, messages, onClick, loading }) => {
+
     const [prevKeypress, setPrevKeypress] = useState(0)
     const resizeTextarea = () => {
       const textarea = document.getElementById('resizeTextarea');
@@ -60,7 +57,7 @@ export const TextInput = ({ placeholder, textstyle, setMessages, messages, onCli
   };
   
   return(
-    <div className="hero bg-gradient-dark h-auto flex flex-col px-2">
+    <div className="hero bg-gradient-dark h-auto flex flex-col">
       <div className="search-box mx-auto my-auto w-full">
         <form className="flex flex-col relative z-20 w-full">
           <span className={`${buttonWrapper} left-2`}>

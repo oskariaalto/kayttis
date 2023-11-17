@@ -1,6 +1,5 @@
 import { DropDown } from "../ui/dropdowns/DropDown"
 
-
 export const ChooseCourse = ({ courses, onChange, handleClick, setCourse, chosenCourse }) => {
   
   return (
@@ -9,7 +8,7 @@ export const ChooseCourse = ({ courses, onChange, handleClick, setCourse, chosen
           {courses.map((course, index) => (
             <span
               key={index}
-              className="block px-4 py-2 hover:text-[#D05A05] rounded-lg cursor-pointer"
+              className={`block px-4 py-2 hover:text-secondary rounded-lg cursor-pointer`}
               onClick={() => {
                 handleClick()
                 setCourse(course)
@@ -32,7 +31,7 @@ export const ChooseExercise = ({exercises, onChange, handleClick, setExercise}) 
         {exercises.map((exercise, index) => (
           <span
             key={index}
-            className="block px-4 py-2 hover:text-[#D05A05] rounded-lg cursor-pointer"
+            className={`block px-4 py-2 hover:text-secondary rounded-lg cursor-pointer`}
             onClick={() => {
               setExercise(exercise)
               handleClick()

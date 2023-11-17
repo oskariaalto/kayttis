@@ -1,12 +1,12 @@
+
 const buttonStyles = {
-  primary: 'bg-[#2E1004] text-[#D05A05] font-bold py-2 px-4 rounded align-middle w-[104.5px]',
+  primary: `bg-background text-secondary font-bold py-2 px-4 rounded align-middle w-[104.5px]`,
 }
 
 //bg-blue-500 text-white
 // vanilla [#E7D79F]
 // light brown [#D05A05]
 // bg brown [#2E1004]
-
 
 export const LoadingButton = ({buttonstyle, ...props}) => {
   return(
